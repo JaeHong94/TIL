@@ -6,7 +6,7 @@ JavaScript에서 가장 혼란스러운 개념중에 하나인 this입니다. th
 
 this는 실행 컨텍스트가 생성될 때 함께 결정되고, 함수를 호출할 때 결정됩니다. 또한 함수를 어떤 방식으로 호출하느냐에 따라 값이 달라지는 것입니다.
 
-### 전역 공간에서의 this
+### 전역 공간에서의 this, 일반 함수 호출 this
 
 ``` js
 var num = 1;
@@ -83,3 +83,58 @@ const list = {
 list.foo();
 ```
 위와 같이 this는 어떠한 함수라도 일반 함수로 호출되면 전역 객체가 바인딩됩니다.
+
+### 메소드를 이용한 방식, .(Dot Notation) 방식
+
+메서드 호출 시 메서드 내부에 this는 호출한 객체에 바인딩됩니다.
+
+```js
+const library = {
+  book: 'JS',
+  getBook() {
+    return this.book;
+  },
+};
+
+console.log(library.getBook()); // JS
+```
+library 객체에서 getBook() 함수를 정의하고 출력했다. 출력할 때 .(Dot Notation) 방식을 이용해서 호출하였기 때문에 library 객체에 바인딩되고 this.book은 library.book과 똑같은 의미가된다.<br><br>
+
+다음 예제에서는 foo라는 변수에 getBook메서드를 할당하고 일반 함수로 호출했을 경우이다.
+
+```js
+function getBook() {
+  console.log(this.book);
+}
+
+const library = {
+  book: 'JS',
+  getBook: getBook,
+};
+
+library.getBook(); // JS
+
+const foo = library.getBook;
+
+foo();             // undefined
+```
+foo() 함수는 .(Dot Notation) 방식이 아닌 일반 함수로 호출하였기 대문에 전역 변수 값으로 출력됩니다.
+
+```js
+function Library(book) {
+  this.book = book;
+}
+
+Library.prototype.getBook = function () {
+  return this.book;
+};
+
+const list = new Library('React');
+
+console.log(list.getBook());              // React
+
+Library.prototype.book = 'Vue.js';
+
+console.log(Library.prototype.getBook()); // Vue.js
+```
+.(Dot Notation) 방식, 메소드를 이용한 방식은 어떤객체를 호출하느냐에 따라 바인딩 장소가 결정됩니다.
