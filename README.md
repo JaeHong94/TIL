@@ -17,8 +17,13 @@
 - [Algorithms](./Algorithms)
 - [JavaScript](./JavaScript)
 
+### 참고 도서 및 문서
+
+- 모던 자바스크립트 Deep Dive
+- 코어 자바스크립트
+- [JavaScript MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript)
+
 ### ps
 
 - 오타 혹은 틀린 내용이 있다면 언제든 지적해주십쇼!
-- 같이 공부하고 싶은 분들도 언제나 연락 환영입니다!
 - 연락처 : moonshin123@naver.com
