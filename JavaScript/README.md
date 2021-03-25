@@ -26,6 +26,12 @@
 - [Array.prototype.splice()](./Array/splice.md)
 - [Array.prototype.unshift()](./Array/unshift.md)
 
+### Core
+
+- [Callback](./Core/callback.md)
+- [Closure](./Core/closure.md)
+- [this](./Core/this.md)
+
 ### Math
 
 - [Math.abs()](./Math/abs.md)
