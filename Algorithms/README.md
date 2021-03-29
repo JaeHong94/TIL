@@ -4,7 +4,10 @@
 
 ## 알고리즘 이론정리
 
+- [구현](./Theory/구현.md)
 - [그리디 알고리즘](./Theory/그리디.md)
+- [스택](./Theory/스택.md)
+- [큐](./Theory/큐.md)
 
 ## LeetCode
 - [두 수의 합](./LeetCode/TwoSum.md)
