@@ -16,6 +16,7 @@
 
 - [Algorithms](./Algorithms)
 - [JavaScript](./JavaScript)
+- [Git](./Git)
 
 ### 참고 도서 및 문서
 #### JavaScript
